@@ -10,14 +10,14 @@
  * @version         1.2.1
  */
 
-require_once PATH_THIRD .'smartdown/markdown/markdown.php';
+require_once PATH_THIRD .'smartdown/markdown/markdown_extended.php';
 require_once PATH_THIRD .'smartdown/smartypants/smartypants.php';
 
 // Basic plugin information (required).
 $plugin_info = array(
     'pi_author'         => 'Stephen Lewis',
     'pi_author_url'     => 'http://experienceinternet.co.uk/',
-    'pi_description'    => 'Smarter Markdown, with PHP Markdown Extra and SmartyPants for spicy content goodness.',
+    'pi_description'    => 'Smarter Markdown, with PHP Markdown Extra Extended and SmartyPants for spicy content goodness.',
     'pi_name'           => 'SmartDown',
     'pi_usage'          => Smartdown::usage(),
     'pi_version'        => '1.2.1'
@@ -125,7 +125,7 @@ class Smartdown {
         // Markdown.
         if ( ! $settings['disable:markdown'])
         {
-            $tagdata = Markdown($tagdata);
+            $tagdata = MarkdownExtended($tagdata);
 
             /**
              * ExpressionEngine automatically encodes any EE tags within
